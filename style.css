@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-pink: #feecea;
+    --color-white: #fff;
+    --color-black: #333;
+    --color-text-pink: #ff7882;
+    --color-heart: #F61F1F;
+    --color-bg-letter: #fff8e4;
+    --color-border: #DACCBF;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-pink);
+}
+
+#wrapper{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255,1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.flag__birthday{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    padding: 0 10px;
+    z-index: 10;
+}
+.flag__birthday img {
+    width: 150px;
+}
+.flag__birthday .flag__left{
+    transform: rotate(-10deg);
+}
+.flag__birthday .flag__right{
+    transform: rotate(10deg) scaleX(-1);
+}
+
+.content{
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.content .left, .content .right{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.title{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Titan One", sans-serif;
+    font-size: 3.2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title .happy, .title .birthday{
+    position: relative;
+    text-shadow: 3px 3px var(--color-black), 
+                -3px 3px var(--color-black), 
+                3px -3px var(--color-black), 
+                -3px -3px var(--color-black);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.title .happy span, .title .birthday span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInText 0.5s ease forwards;
+    animation-delay: var(--t);
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title .happy{
+    color: var(--color-white);
+}
+
+.title .birthday{
+    color: var(--color-text-pink);
+}
+
+.title .hat{
+    position: absolute;
+    right: 15%;
+    top: -55px;
+    transform: rotate(-20deg);
+}
+.title .hat img {
+    width: 110px;
+}
+
+.date__of__birth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-text-pink);
+    border-radius: 50px;
+    margin-top: 20px;
+    border: 3px solid var(--color-black);
+    padding: 10px 25px;
+    gap: 10px;
+}
+
+.date__of__birth span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-white);
+    font-family: "Sriracha", cursive;
+}
+.date__of__birth i {
+    color: var(--color-white);
+}
+
+.countdown {
+    margin-top: 15px;
+    font-family: 'Sriracha', cursive;
+    color: var(--color-black);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px dashed var(--color-text-pink);
+}
+
+.btn{
+    margin-top: 15px;
+}
+
+#btn__letter{
+    background-color: var(--color-text-pink);
+    outline: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: 3px solid var(--color-black);
+    font-family: "Sriracha", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#btn__letter:hover{
+    background-color: var(--color-heart);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.content .right .image{
+    position: relative;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid var(--color-black);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.content .right .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-text-pink);
+    border-radius: 50px;
+    padding: 6px 25px;
+    bottom: -20px;
+    border: 3px solid var(--color-black);
+    gap: 10px;
+}
+
+.name span {
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: "Sriracha", cursive;
+    color: var(--color-white);
+}
+
+.cricle{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text__cricle{
+    width: 90px;
+    height: 90px;
+    background-color: var(--color-text-pink);
+    border-radius: 50%;
+    border: 3px solid var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotateCricle 8s linear infinite;
+}
+
+@keyframes rotateCricle{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.text__cricle span{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    color: var(--color-black);
+    transform: rotate(calc(var(--i) * 24deg)) translate(0, -32px);
+    font-family: "Sriracha", cursive;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+.fa-heart{
+    color: var(--color-heart);
+}
+
+.cricle .fa-heart{
+    position: absolute;
+    font-size: 1.3rem;
+}
+
+.right .balloon_one{
+    position: absolute;
+    top: 10px;
+    left: -35px;
+}
+.right .balloon_one img {
+    width: 80px;
+}
+
+.right .balloon_two{
+    position: absolute;
+    top: 140px;
+    right: -35px;
+}
+.right .balloon_two img {
+    width: 80px;
+}
+
+/* Letter Box Modal */
+.box__letter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.box__letter .letter__border{
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 380px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: 15px;
+    border: 3px solid var(--color-black);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: none;
+}
+
+.letter__border .close{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 38px;
+    height: 38px;
+    background-color: var(--color-white);
+    border: 3px solid var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.1rem;
+}
+
+.letter__border .letter{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-letter);
+    border-radius: 12px;
+    border: 2px dashed var(--color-border);
+    padding: 10px;
+}
+
+.letter__border .letter .title__letter{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: var(--color-text-pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.letter__border .letter .content__letter{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.content__letter .left{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.content__letter .left #heart__letter{
+    width: 130px;
+    opacity: 0;
+}
+
+#heart__letter.animationOp, .love__img.animationOp, #mewmew.animationOp {
+    animation: opacityHeart 1s forwards;
+}
+
+@keyframes opacityHeart{
+    to{
+        opacity: 1;
+    }
+}
+
+.content__letter .left .heart{
+    position: absolute;
+    opacity: 0;
+}
+
+.content__letter .left .heart.animation {
+    animation: flyHeart 2s ease-in-out infinite;
+    animation-delay: var(--t);
+}
+
+@keyframes flyHeart{
+    0%{
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(-30px, -80px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.content__letter .right{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.content__letter .right .love__img img {
+    width: 150px;
+    opacity: 0;
+}
+
+.content__letter .right .text__letter{
+    margin-top: 5px;
+    padding: 5px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: var(--color-black);
+}
+
+.content__letter .right #mewmew {
+    width: 60px;
+    opacity: 0;
+    margin-top: 5px;
+}
+
+/* Responsive Media Query for Mobile screens */
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+    .content .left, .content .right {
+        width: 100%;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+    .title .hat img {
+        width: 70px;
+        top: -30px;
+        right: 12%;
+    }
+    .content .right .image {
+        width: 200px;
+        height: 200px;
+    }
+    .right .balloon_one img, .right .balloon_two img {
+        width: 60px;
+    }
+    .content__letter {
+        flex-direction: column !important;
+    }
+    .content__letter .left, .content__letter .right {
+        width: 100% !important;
+    }
+}
